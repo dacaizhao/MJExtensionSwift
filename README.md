@@ -1,6 +1,6 @@
 ![Logo](https://static.oschina.net/uploads/user/593/1186234_100.jpeg?t=1480245299000)
 
-💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐
+💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐💐
 
 MJExtensionSwift
 ===
@@ -10,12 +10,12 @@ MJExtensionSwift
 GitHub：[dacaizhao](https://github.com/dacaizhao) ｜ Blog：[dacaizhao(Chinese)](http://my.oschina.net/zhaodacai) ｜ PR is welcome，or [feedback](mailto:327532817@qq.com)
 
 ## Features
-- [x] 父属性的使用
-- [x] 整形 浮点 字符串 布尔 普通数组
+- [x] 父级属性使用
+- [x] 整形,浮点,字符串,布尔,普通数组
 - [x] key替换
-- [x] nil 自动补充免崩溃
+- [x] nil自动补充免崩溃
 - [x] 模型内部模型
-- [x] 型内部模型数组模型
+- [x] 模型内部模型 的 数组模型
 
 ![](https://github.com/dacaizhao/MJExtensionSwift/blob/master/MJExtensionSwift/Assets.xcassets/dict.imageset/dict.png?raw=true)
 ![](https://github.com/dacaizhao/MJExtensionSwift/blob/master/MJExtensionSwift/Assets.xcassets/func.imageset/func.png?raw=true)
