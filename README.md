@@ -3,10 +3,20 @@ MJExtensionSwift
 ===
 - A fast, convenient and nonintrusive conversion between JSON and model for swift language development.
 - 转换速度快、使用简单方便的字典转模型框架 适用于 swift 语言开发
-
 GitHub：[dacaizhao](https://github.com/dacaizhao) ｜ Blog：[dacaizhao(Chinese)](http://my.oschina.net/zhaodacai) ｜ PR is welcome，or [feedback](mailto:327532817@qq.com)
 
-# MJExtensionSwift
+- 💐💐💐💐💐💐💐💐
+## Features
+- [y] Support a variety of hot search style
+- [x] Support a variety of search history style
+- [x] Support a variety of search results display mode
+- [x] Support search suggestions
+- [x] Support search history (record) cache
+- [x] Support callback using delegate or block completion search
+- [x] Support CocoaPods
+- [x] Support localization
+- 💐💐💐💐💐💐💐💐
+
 ![](https://github.com/dacaizhao/MJExtensionSwift/blob/master/MJExtensionSwift/Assets.xcassets/dict.imageset/dict.png?raw=true)
 ![](https://github.com/dacaizhao/MJExtensionSwift/blob/master/MJExtensionSwift/Assets.xcassets/func.imageset/func.png?raw=true)
 
