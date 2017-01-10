@@ -14,7 +14,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //先仔细阅读一下字典内部注释,就可以很快清晰MJExtensionSwift
-
         let dict = [
             "age":12,
             "name":"M了个J",
@@ -84,7 +83,7 @@ class ViewController: UIViewController {
            
             i = i + 1
         }
-        print("444444444444444444444444")
+        print("55555555555555555555555")
         
     }
 }
