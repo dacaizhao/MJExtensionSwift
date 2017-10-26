@@ -16,7 +16,7 @@ class Person: Animal {
         return ["schoolModel":"school","coding":"code"]
     }
     
-    override func tmStatement() -> [String : String] {
+    override func tmStatementKey() -> [String : String] {
         return ["schoolModel":"AloneModel"]
     }
 }

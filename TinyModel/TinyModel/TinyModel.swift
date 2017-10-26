@@ -57,7 +57,7 @@ extension NSObject{
             return nil
         }
         let my = self.init()
-        let statementDict = my.tmStatement()
+        let statementDict = my.tmStatementKey()
         let replaceDic = my.tmReplacedKey()
         var propertiesArray = [TMProperty]()
         let tmSuperClass =  typeClass.superclass() as! NSObject.Type
@@ -76,7 +76,7 @@ extension NSObject{
         return propertiesArray
     }
     
-    @objc func tmStatement() ->[String:String]{
+    @objc func tmStatementKey() ->[String:String]{
         return ["":""]
     }
     
