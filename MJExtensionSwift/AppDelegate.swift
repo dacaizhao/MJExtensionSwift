@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  TinyModel
+//  MJExtensionSwift
 //
-//  Created by point on 2017/10/25.
+//  Created by point on 2017/10/26.
 //  Copyright © 2017年 dacai. All rights reserved.
 //
 
