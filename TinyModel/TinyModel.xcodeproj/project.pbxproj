@@ -47,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5992CF261FA185DF00898EEB /* TinyModel */ = {
+			isa = PBXGroup;
+			children = (
+				59BFB32F1FA07433004A53D3 /* TinyModel.swift */,
+			);
+			path = TinyModel;
+			sourceTree = "<group>";
+		};
 		59BFB3111FA07424004A53D3 = {
 			isa = PBXGroup;
 			children = (
@@ -66,8 +74,8 @@
 		59BFB31C1FA07424004A53D3 /* TinyModel */ = {
 			isa = PBXGroup;
 			children = (
+				5992CF261FA185DF00898EEB /* TinyModel */,
 				59BFB3331FA07519004A53D3 /* Model */,
-				59BFB32F1FA07433004A53D3 /* TinyModel.swift */,
 				59BFB31D1FA07424004A53D3 /* AppDelegate.swift */,
 				59BFB31F1FA07424004A53D3 /* ViewController.swift */,
 				59BFB3211FA07424004A53D3 /* Main.storyboard */,
