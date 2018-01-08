@@ -15,7 +15,7 @@ class SchoolModel: NSObject {
     @objc var classModel:Array<ClassModel> = [ClassModel]()
     
     override func tmStatementKey() -> [String : String] {
-        return ["classModela":"ModelArr"]
+        return ["classModela":TinyModelType.ModelArr.rawValue]
     }
     override func tmReplacedKey() -> [String : String] {
         return ["classModela":"luanxie"]

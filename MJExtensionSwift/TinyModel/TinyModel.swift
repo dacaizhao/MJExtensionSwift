@@ -9,7 +9,7 @@
 import UIKit
 var TinyModelDebug = false
 
-enum TinyModelType : NSString {
+enum TinyModelType : String {
     case Base = "Base"
     case ModelArr = "ModelArr"
     case Model = "Model"
@@ -156,7 +156,7 @@ class TMProperty{
         
         if (newValues != nil) {
             let value = dict[values]!
-            if value.contains("AloneModel") {
+            if value.contains("Model") {
                 self.tmModelType = .Model
             }
             if value.contains("ModelArr") {
@@ -171,7 +171,7 @@ class TMProperty{
     fileprivate func tmFristCapitalized(str:String) -> String {
         var noNumber:String = ""
         var i = 0
-        for char in (str as String).characters{
+        for char in str{
             if i == 0 {
                 let str = String(char).uppercased()
                 noNumber = str

@@ -17,6 +17,6 @@ class Person: Animal {
     }
     
     override func tmStatementKey() -> [String : String] {
-        return ["schoolModel":"AloneModel"]
+        return ["schoolModel":TinyModelType.Model.rawValue]
     }
 }
