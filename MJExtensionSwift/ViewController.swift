@@ -18,38 +18,73 @@ class ViewController: UIViewController {
         //demo0
         //最简单的模型 整形 浮点 字符串 布尔 数组
         //值得一提的是 swif数组已可变
-        demo0()
+        //demo0()
         
         //demo1
         //支持父级属性的继承
-        demo1()
+        // demo1()
         
         //demo2
         //模型数组
         //且修改数组 coding 增加c#
         //key 写错给予提示性
-        demo2()
+        //demo2()
         
         
         //demo3
         //替换下标
-        demo3()
+        //demo3()
         
         //demo4
         //模型嵌套模型且有空值的过滤
-        demo4()
+        //demo4()
         
         
         //demo5
         //模型嵌套模型且有空值的过滤 含有数组
-        demo5()
+        //demo5()
         
+        
+        //demo6
+        //新增数组嵌套数组demo
+        demo6()
         
     }
     
 }
 
 extension ViewController {
+    
+    func demo6() {
+        let dict = [
+            ["title":"hah0",
+             "ct":"1111",
+             "list":[
+                ["big":"big1" , "middle":"middle1" ,"small":"small1"],
+                ["big":"big2" , "middle":"middle2" ,"small":"small2"]
+                ]
+            ],
+            
+            ["title":"hah2",
+             "ct":"333",
+             "list":[
+                ["big":"big3" , "middle":"middle1" ,"small":"small1"],
+                ["big":"big4" , "middle":"middle2" ,"small":"small2"]
+                ]
+            ]
+            
+            ] as [[String : AnyObject]]
+        let modelArr = BeautyModel.tmSpeelBreakModelArr(dict) as! [BeautyModel]
+        for (_,model) in modelArr.enumerated() {
+            let  p:BeautyModel = model
+            print(p.title , p.ct)
+            for (_,model) in p.beautyModelList .enumerated() {
+                let  m:BeautyModelList = model
+                print(m.big,m.middle ,m.small)
+            }
+        }
+        print("=======")
+    }
     
     func demo5() {
         
@@ -167,3 +202,4 @@ extension ViewController {
         print(model.age,model.name,model.reproduction,model.weight,model.spouse)
     }
 }
+

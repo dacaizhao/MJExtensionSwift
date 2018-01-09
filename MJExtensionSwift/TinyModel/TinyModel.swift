@@ -15,13 +15,11 @@ enum TinyModelType : String {
     case Model = "Model"
 }
 
-
-
 extension NSObject{
     
     class func tmSpeelBreak(_ keyValues:Dictionary<String, AnyObject>) -> Self{
         let tyFormatModel = self.init()
-        let properties = getProperties(self)
+        let properties = getProperties(self) //获取属性
         tyFormatModel.setValuesForProperties(properties, keyValues: keyValues)
         return tyFormatModel
     }
@@ -31,10 +29,11 @@ extension NSObject{
     }
     
     private class func tmObjectArrayWithKeyValuesArray(_ array:Array<Any> , _ currentClass:AnyClass) -> [AnyObject]{
-        var temp = Array<AnyObject>()
-        let properties = self.getProperties(currentClass)
-        for item in array{
-            let keyValues = item as? NSDictionary
+        var temp = Array<AnyObject>() //定义1个数组
+        let properties = self.getProperties(currentClass) //获取当前类的属性
+        
+        for item in array {  //便利数组
+            let keyValues = item as? NSDictionary //数组里面的字典
             if (keyValues != nil){
                 let model = self.init()
                 //为每个model赋值
@@ -47,25 +46,28 @@ extension NSObject{
     
     
     //获取属性
-    class func getProperties (_ typeClass : AnyClass) -> [TMProperty]? {
+    private class func getProperties (_ typeClass : AnyClass) -> [TMProperty]? {
         
         guard let className  = NSString(cString: class_getName(typeClass), encoding: String.Encoding.utf8.rawValue) else {
             return nil
-        }
+        }  //获取类型
         
         if className.isEqual(to: "NSObject") {
             return nil
         }
         let my = self.init()
-        let statementDict = my.tmStatementKey()
-        let replaceDic = my.tmReplacedKey()
+        let statementDict = my.tmStatementKey() //累的类型
+        let replaceDic = my.tmReplacedKey() //替换的下标
+        
+        
+        
         var propertiesArray = [TMProperty]()
         let tmSuperClass =  typeClass.superclass() as! NSObject.Type
         
         let superM = getProperties(tmSuperClass)
         if let _ = superM {
             propertiesArray += superM!
-        }
+        }  //获取父累
         var count : UInt32 = 0
         let ivars = class_copyIvarList(typeClass, &count)!
         for i in 0..<count {
@@ -76,16 +78,11 @@ extension NSObject{
         return propertiesArray
     }
     
-    @objc func tmStatementKey() ->[String:String]{
-        return ["":""]
-    }
     
-    @objc func tmReplacedKey() ->[String:String]{
-        return ["":""]
-    }
     
     //赋值
-    func setValuesForProperties(_ properties:[TMProperty]?,keyValues:Dictionary<String, AnyObject>){
+    private func setValuesForProperties(_ properties:[TMProperty]?,keyValues:Dictionary<String, AnyObject>){
+        
         guard (properties != nil) else {
             return
         }
@@ -99,6 +96,7 @@ extension NSObject{
                 let currentModel = property.typeClass as! NSObject.Type
                 self.setValue(currentModel.tmSpeelBreak(value as! Dictionary<String, AnyObject>), forKey: property.tmPropertyName)
                 currentDict = value as! [String : AnyObject]
+                
             } else if (property.tmModelType ==  .ModelArr) {
                 if property.typeClass  == nil {
                     debugPrint("TinyModelDebug: " + property.tmPropertyName + "key与你创建的类不一致")
@@ -108,6 +106,7 @@ extension NSObject{
                 let currentModel = property.typeClass as! NSObject.Type
                 let currentArr = currentModel.tmSpeelBreakModelArr(value as! Array)
                 self.setValue(currentArr, forKey: property.tmPropertyName)
+                
             } else {
                 guard let value = currentDict[property.tmPropertykey] else {
                     debugPrint("TinyModelDebug: " + property.tmPropertyName + "模型与字典的key不匹配")
@@ -119,23 +118,34 @@ extension NSObject{
                 }else {
                     debugPrint("TinyModelDebug: " + property.tmPropertyName + "值为nil")
                 }
+                
             }
         }
     }
     
+    
+    //MARK: - DEBUG控制
     fileprivate func debugPrint(_ message:String)   {
         if TinyModelDebug {
             print(message)
         }
     }
+    
+    @objc func tmStatementKey() ->[String:String]{
+        return ["":""]
+    }
+    
+    @objc func tmReplacedKey() ->[String:String]{
+        return ["":""]
+    }
 }
 
 
-class TMProperty{
-    var tmPropertyName:String!
-    var tmPropertykey:String!
-    var tmModelType:TinyModelType = .Base
-    var typeClass:AnyClass?
+class TMProperty {   //每个元素属性
+    var tmPropertyName:String! //名字
+    var tmPropertykey:String!  //可能存重写
+    var tmModelType:TinyModelType = .Base //当前属性的类型
+    var typeClass:AnyClass? //当前类的名称
     init(_ tmProperty:objc_property_t ,_ dict:Dictionary<String, String> , _ rdict:Dictionary<String, String>){
         let name = ivar_getName(tmProperty)
         self.tmPropertyName = String(cString: name!)
@@ -144,26 +154,28 @@ class TMProperty{
     
     //判断是否是自定义类型
     private func analysisTMModel(values:String , _ dict:Dictionary<String, String>, _ rdict:Dictionary<String, String>)  {
+        /*
+         注意： beautyModelList 应该是类的类型
+         */
         self.tmPropertykey =  self.tmPropertyName
+        let keyStatement = dict[values] //类的申明
+        let keyRepalce = rdict[values] //类的替换
         
-        let newValues = dict[values]
-        
-        let repalceValue = rdict[values]
-        
-        if (repalceValue != nil) {
-            self.tmPropertykey =  repalceValue!
+        if (keyRepalce != nil) { //替换掉
+            self.tmPropertykey =  keyRepalce!
         }
         
-        if (newValues != nil) {
-            let value = dict[values]!
+        if (keyStatement != nil) {
+            let value = keyStatement!
             if value.contains("Model") {
                 self.tmModelType = .Model
             }
             if value.contains("ModelArr") {
                 self.tmModelType = .ModelArr
             }
+            //生成类型
             let className = tmFristCapitalized(str: self.tmPropertyName)
-            self.typeClass =   NSClassFromString(tmGetBundleName() + "." + className)
+            self.typeClass =  NSClassFromString(tmGetBundleName() + "." + className)
         }
     }
     

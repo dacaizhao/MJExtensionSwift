@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5908476C20050C5E00C3CBBA /* TinyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908476B20050C5D00C3CBBA /* TinyModel.swift */; };
+		5908476F20050C6900C3CBBA /* BeautyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908476D20050C6900C3CBBA /* BeautyModel.swift */; };
+		5908477020050C6900C3CBBA /* BeautyModelList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908476E20050C6900C3CBBA /* BeautyModelList.swift */; };
 		5992CF341FA18F4500898EEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992CF331FA18F4500898EEB /* AppDelegate.swift */; };
 		5992CF391FA18F4500898EEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5992CF371FA18F4500898EEB /* Main.storyboard */; };
 		5992CF3B1FA18F4500898EEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5992CF3A1FA18F4500898EEB /* Assets.xcassets */; };
@@ -17,10 +20,12 @@
 		5992CF5A1FA1902900898EEB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992CF551FA1902900898EEB /* Person.swift */; };
 		5992CF5B1FA1902900898EEB /* PersonReplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992CF561FA1902900898EEB /* PersonReplace.swift */; };
 		5992CF5C1FA1902900898EEB /* SchoolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992CF571FA1902900898EEB /* SchoolModel.swift */; };
-		5992CF5F1FA1903700898EEB /* TinyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992CF5E1FA1903700898EEB /* TinyModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5908476B20050C5D00C3CBBA /* TinyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyModel.swift; sourceTree = "<group>"; };
+		5908476D20050C6900C3CBBA /* BeautyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeautyModel.swift; sourceTree = "<group>"; };
+		5908476E20050C6900C3CBBA /* BeautyModelList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeautyModelList.swift; sourceTree = "<group>"; };
 		5992CF301FA18F4500898EEB /* MJExtensionSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJExtensionSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5992CF331FA18F4500898EEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5992CF381FA18F4500898EEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,7 +38,6 @@
 		5992CF551FA1902900898EEB /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		5992CF561FA1902900898EEB /* PersonReplace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonReplace.swift; sourceTree = "<group>"; };
 		5992CF571FA1902900898EEB /* SchoolModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolModel.swift; sourceTree = "<group>"; };
-		5992CF5E1FA1903700898EEB /* TinyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 		5992CF521FA1902900898EEB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5908476D20050C6900C3CBBA /* BeautyModel.swift */,
+				5908476E20050C6900C3CBBA /* BeautyModelList.swift */,
 				5992CF531FA1902900898EEB /* Animal.swift */,
 				5992CF541FA1902900898EEB /* ClassModel.swift */,
 				5992CF551FA1902900898EEB /* Person.swift */,
@@ -93,7 +99,7 @@
 		5992CF5D1FA1903700898EEB /* TinyModel */ = {
 			isa = PBXGroup;
 			children = (
-				5992CF5E1FA1903700898EEB /* TinyModel.swift */,
+				5908476B20050C5D00C3CBBA /* TinyModel.swift */,
 			);
 			path = TinyModel;
 			sourceTree = "<group>";
@@ -171,13 +177,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5992CF5A1FA1902900898EEB /* Person.swift in Sources */,
+				5908476F20050C6900C3CBBA /* BeautyModel.swift in Sources */,
 				5992CF341FA18F4500898EEB /* AppDelegate.swift in Sources */,
 				5992CF511FA18FD900898EEB /* ViewController.swift in Sources */,
 				5992CF5B1FA1902900898EEB /* PersonReplace.swift in Sources */,
 				5992CF5C1FA1902900898EEB /* SchoolModel.swift in Sources */,
 				5992CF591FA1902900898EEB /* ClassModel.swift in Sources */,
+				5908477020050C6900C3CBBA /* BeautyModelList.swift in Sources */,
 				5992CF581FA1902900898EEB /* Animal.swift in Sources */,
-				5992CF5F1FA1903700898EEB /* TinyModel.swift in Sources */,
+				5908476C20050C5E00C3CBBA /* TinyModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
